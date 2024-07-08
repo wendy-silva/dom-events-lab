@@ -10,7 +10,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const calculator = document.querySelector("#calculator");
-  let display = document.querySelector("#display");
+  let display = document.querySelector(".display");
   let firstNumber = "";
   let secondNumber = "";
   let currentOperator = null;
@@ -30,10 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (target.classList[1] == "number") {
       if (!isSecondNumber) {
         firstNumber += target.innerText;
-        //   display.innerText = firstNumber;
+        display.innerText = firstNumber;
       } else {
         secondNumber += target.innerText;
-        //   display.innerText = secondNumber;
+        display.innerText = secondNumber;
       }
     }
 
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Ensure the first number exists
         currentOperator = target.innerText;
         isSecondNumber = true;
-        //   display.innerText = '';  // Clear display for the second number
+        display.innerText = ""; // Clear display for the second number
       }
     }
 
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
           // Add more cases for other operators as needed
         }
 
-        // display.innerText = result;
+        display.innerText = result;
         console.log(result);
         // Reset for the next operation
         firstNumber = "";
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       secondNumber = "";
       currentOperator = null;
       isSecondNumber = false;
-      // display.innerText = '';
+      display.innerText = "";
     }
   });
 });
